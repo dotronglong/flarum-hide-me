@@ -1,0 +1,39 @@
+{
+    "name": "dotronglong/flarum-hide-me",
+    "description": "Allow to hide real author's identity",
+    "keywords": [
+        "extension",
+        "flarum",
+        "post",
+        "discussion",
+        "hide",
+        "author"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Long Do",
+            "email": "me@dotronglong.com",
+            "homepage": "https://dotronglong.com/"
+        }
+    ],
+    "require": {
+        "flarum/core": "^0.1.0-beta.8"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Hide Me",
+            "icon": {
+                "name": "fas fa-user-shield",
+                "backgroundColor": "#e74c3c",
+                "color": "#fff"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Long\\HideMe\\": "src/"
+        }
+    }
+}
