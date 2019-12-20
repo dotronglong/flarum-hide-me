@@ -1,0 +1,48 @@
+.HideMeDiscussionModal {
+    ul {
+        padding-left: 0;
+        li {
+            padding: 5px;
+            border-radius: 5px;
+            list-style: none;
+            margin-bottom: 5px;
+            &.last-child {
+                margin-bottom: 0;
+            }
+            &:hover {
+                background: white;
+            }
+            small {
+                margin-left: 18px;
+            }
+            .Checkbox-display {
+                display: inline;
+                margin-right: 5px;
+            }
+            .Checkbox.off {
+                .Checkbox-display {
+                    margin-right: 10px;
+                }
+                .icon.fa-times {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
+#composer {
+    .item-privacy {
+        .Button {
+            width: 24px;
+        }
+        .privacy-text-public {
+            color: blue;
+        }
+        .privacy-text-anonymous {
+            color: orange;
+        }
+        .privacy-text-ghost {
+            color: red;
+        }
+    }
+}
