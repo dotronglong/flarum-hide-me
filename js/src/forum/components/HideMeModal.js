@@ -26,11 +26,14 @@ export default class HideMeModal extends Modal {
                         <label>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_label')}</label>
                         <ul>
                             <li className="item-nav">
-                                <Checkbox state={isPublic} onchange={() => this.privacy=1}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_public_label')}</strong></Checkbox>
+                                <Checkbox state={isPublic}
+                                          onchange={() => this.privacy = 1}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_public_label')}</strong></Checkbox>
                                 <small>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_public_info')}</small>
-                            </li>,
+                            </li>
+                            ,
                             <li className="item-nav">
-                                <Checkbox state={isAnonymous} onchange={() => this.privacy=2}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_anonymous_label')}</strong></Checkbox>
+                                <Checkbox state={isAnonymous}
+                                          onchange={() => this.privacy = 2}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_anonymous_label')}</strong></Checkbox>
                                 <small>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_anonymous_info')}</small>
                             </li>
                         </ul>

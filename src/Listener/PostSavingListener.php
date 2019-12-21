@@ -5,7 +5,7 @@ namespace Long\HideMe\Listener;
 use Flarum\Post\Event\Saving;
 use Long\HideMe\HideMe;
 
-class PostSaving
+class PostSavingListener
 {
     public function handle(Saving $event)
     {

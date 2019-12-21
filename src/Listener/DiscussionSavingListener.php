@@ -5,7 +5,7 @@ namespace Long\HideMe\Listener;
 use Flarum\Discussion\Event\Saving;
 use Long\HideMe\HideMe;
 
-class DiscussionSaving
+class DiscussionSavingListener
 {
     public function handle(Saving $event)
     {

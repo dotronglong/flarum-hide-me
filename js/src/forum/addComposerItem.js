@@ -1,4 +1,4 @@
-import { extend } from 'flarum/extend';
+import {extend} from 'flarum/extend';
 import Composer from 'flarum/components/Composer';
 import DiscussionComposer from 'flarum/components/DiscussionComposer';
 import EditPostComposer from 'flarum/components/EditPostComposer';
@@ -9,7 +9,7 @@ import HideMeModal from './components/HideMeModal';
 
 export default () => {
 
-    Composer.prototype.hideMe = function() {
+    Composer.prototype.hideMe = function () {
         app.modal.show(
             new HideMeModal({
                 privacy: app.composer.props.hide_me === undefined ? 1 : app.composer.props.hide_me,
@@ -18,7 +18,7 @@ export default () => {
         );
     };
 
-    extend(Composer.prototype, 'controlItems', function(items) {
+    extend(Composer.prototype, 'controlItems', function (items) {
         let buttonClassname = "Button Button--icon Button--link ";
         let buttonTitle = "";
         const mode = app.composer.props.hide_me;
@@ -37,19 +37,19 @@ export default () => {
         }), 1);
     });
 
-    extend(DiscussionComposer.prototype, 'data', function(data) {
+    extend(DiscussionComposer.prototype, 'data', function (data) {
         if (app.composer.props.hide_me) {
             data.hide_me = app.composer.props.hide_me;
         }
     });
 
-    extend(EditPostComposer.prototype, 'data', function(data) {
+    extend(EditPostComposer.prototype, 'data', function (data) {
         if (app.composer.props.hide_me) {
             data.hide_me = app.composer.props.hide_me;
         }
     });
 
-    extend(ReplyComposer.prototype, 'data', function(data) {
+    extend(ReplyComposer.prototype, 'data', function (data) {
         if (app.composer.props.hide_me) {
             data.hide_me = app.composer.props.hide_me;
         }

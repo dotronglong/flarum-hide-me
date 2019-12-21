@@ -2,6 +2,10 @@
 
 namespace Long\HideMe;
 
+use Flarum\Discussion\Discussion;
+use Flarum\Post\Post;
+use Long\HideMe\User\Anonymous;
+
 class HideMe
 {
     const PUBLIC = 1;
@@ -14,5 +18,13 @@ class HideMe
             self::PUBLIC,
             self::ANONYMOUS,
         ]);
+    }
+
+    public static function hide($model)
+    {
+        if (($model instanceof Discussion || $model instanceof Post)
+            && $model['hide_me'] === self::ANONYMOUS) {
+            $model->setRelation('user', new Anonymous());
+        }
     }
 }
