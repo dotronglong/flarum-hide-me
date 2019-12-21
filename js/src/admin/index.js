@@ -1,7 +1,6 @@
 import {extend} from 'flarum/extend';
 import app from 'flarum/app';
 import PermissionGrid from 'flarum/components/PermissionGrid';
-import HideMeSettingsModal from "./components/HideMeSettingsModal";
 
 app.initializers.add('dotronglong-hide-me', () => {
     extend(PermissionGrid.prototype, 'moderateItems', items => {
@@ -11,6 +10,4 @@ app.initializers.add('dotronglong-hide-me', () => {
             permission: 'dotronglong-hide-me.seeAuthor'
         });
     });
-
-    app.extensionSettings['dotronglong-hide-me'] = () => app.modal.show(new HideMeSettingsModal());
 });

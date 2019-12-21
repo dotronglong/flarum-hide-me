@@ -19,32 +19,20 @@ export default class HideMeModal extends Modal {
     content() {
         const isPublic = this.privacy === 1;
         const isAnonymous = this.privacy === 2;
-        const isGhost = this.privacy === 3;
-        const items = [
-            <li className="item-nav">
-                <Checkbox state={isPublic} onchange={() => this.privacy=1}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_public_label')}</strong></Checkbox>
-                <small>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_public_info')}</small>
-            </li>,
-            <li className="item-nav">
-                <Checkbox state={isAnonymous} onchange={() => this.privacy=2}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_anonymous_label')}</strong></Checkbox>
-                <small>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_anonymous_info')}</small>
-            </li>
-        ];
-        if (app.forum.data.attributes.enableGhostMode === true) {
-            items.push(
-                <li className="item-nav">
-                    <Checkbox state={isGhost} onchange={() => this.privacy=3}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_ghost_label')}</strong></Checkbox>
-                    <small>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_ghost_info')}</small>
-                </li>
-            );
-        }
         return [
             <div className="Modal-body">
                 <div className="HideMeDiscussionModal-form">
                     <div className="Form-group">
                         <label>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_label')}</label>
                         <ul>
-                            {items}
+                            <li className="item-nav">
+                                <Checkbox state={isPublic} onchange={() => this.privacy=1}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_public_label')}</strong></Checkbox>
+                                <small>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_public_info')}</small>
+                            </li>,
+                            <li className="item-nav">
+                                <Checkbox state={isAnonymous} onchange={() => this.privacy=2}><strong>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_anonymous_label')}</strong></Checkbox>
+                                <small>{app.translator.trans('dotronglong-hide-me.forum.modal.privacy_anonymous_info')}</small>
+                            </li>
                         </ul>
                     </div>
 

@@ -28,9 +28,6 @@ export default () => {
         } else if (mode === 2) {
             buttonClassname += "privacy-text-anonymous";
             buttonTitle = app.translator.trans('dotronglong-post-privacy.forum.modal.privacy_anonymous_label');
-        } else if (mode === 3) {
-            buttonClassname += "privacy-text-ghost";
-            buttonTitle = app.translator.trans('dotronglong-post-privacy.forum.modal.privacy_ghost_label');
         }
         items.add('privacy', ComposerButton.component({
             icon: 'fas fa-user-shield minimize',

@@ -1,10 +1,7 @@
 dotronglong-hide-me:
     admin:
         permissions:
-            see_author: See Author
-        settings:
-            title: Hide Me Settings
-            enable_ghost_mode_label: Enable Ghost Mode (Completely anonymous)
+            see_author: See post's author
     forum:
         modal:
             title: Hide Me
@@ -14,5 +11,3 @@ dotronglong-hide-me:
             privacy_public_info: Your identity will be visible to everyone.
             privacy_anonymous_label: Anonymous Mode
             privacy_anonymous_info: Show as anonymous. You can still edit post.
-            privacy_ghost_label: Ghost Mode
-            privacy_ghost_info: Show as anonymous. You cannot edit post.
