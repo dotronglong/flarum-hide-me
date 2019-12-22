@@ -7,11 +7,6 @@ use Flarum\User\User;
 
 class Anonymous extends User
 {
-    protected $fillable = [
-        'id',
-        'username'
-    ];
-
     public function isAdmin()
     {
         return false;
@@ -25,16 +20,16 @@ class Anonymous extends User
     public static function user()
     {
         $now = Carbon::now('utc')->toDateTimeString();
-        return new static([
-            'id' => -1,
-            'username' => '[hidden]',
-            'display_name' => '[hidden]',
-            'join_time' => $now,
-            'last_seen_at' => $now,
-            'discussion_count' => 0,
-            'comment_count' => 0,
-            'is_email_confirmed' => true,
-            'email' => 'mail@hidden.com'
-        ]);
+        $user = new static();
+        $user->id = -1;
+        $user->username = '[hidden]';
+        $user->display_name = '[hidden]';
+        $user->joined_at = $now;
+        $user->last_seen_at = $now;
+        $user->discussion_count = 0;
+        $user->comment_count = 0;
+        $user->is_email_confirmed = true;
+        $user->email = 'mail@hidden.com';
+        return $user;
     }
 }
