@@ -14,4 +14,4 @@ dotronglong-hide-me:
 core:
     lib:
         username:
-            deleted_text: Anonymous
+            deleted_text: "[hidden]"
