@@ -11,6 +11,16 @@ class Anonymous extends User
         'username'
     ];
 
+    public function isAdmin()
+    {
+        return false;
+    }
+
+    public function isGuest()
+    {
+        return false;
+    }
+
     public static function user()
     {
         $now = Carbon::now('utc')->toDateTimeString();
