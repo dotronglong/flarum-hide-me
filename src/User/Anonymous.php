@@ -26,15 +26,15 @@ class Anonymous extends User
     {
         $now = Carbon::now('utc')->toDateTimeString();
         return new static([
-            'id' => 0,
-            'username' => 'anonymous',
-            'displayName' => 'Anonymous',
-            'joinTime' => $now,
-            'lastSeenAt' => $now,
-            'discussionCount' => 0,
-            'commentCount' => 0,
-            'isEmailConfirmed' => true,
-            'email' => 'mail@anonymous.com'
+            'id' => -1,
+            'username' => '[hidden]',
+            'display_name' => '[hidden]',
+            'join_time' => $now,
+            'last_seen_at' => $now,
+            'discussion_count' => 0,
+            'comment_count' => 0,
+            'is_email_confirmed' => true,
+            'email' => 'mail@hidden.com'
         ]);
     }
 }
