@@ -16,6 +16,9 @@ class SerializingListener
         if ($event->serializer instanceof DiscussionSerializer
             || $event->serializer instanceof BasicPostSerializer
             || $event->serializer instanceof PostSerializer) {
+            if ($event->actor->can('dotronglong-hide-me.see_author')) {
+                return; // no hidden
+            }
             HideMe::hide($event->model);
         }
     }
