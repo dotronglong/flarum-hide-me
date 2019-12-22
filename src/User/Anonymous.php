@@ -7,17 +7,14 @@ use Flarum\User\User;
 
 class Anonymous extends User
 {
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-        $this->setAttribute('id', 0);
-        $this->setRelation('groups', []);
-    }
+    protected $fillable = [
+        'username'
+    ];
 
-    public function attributesToArray()
+    public static function user()
     {
         $now = Carbon::now('utc')->toDateTimeString();
-        return [
+        return new static([
             'username' => 'anonymous',
             'displayName' => 'Anonymous',
             'joinTime' => $now,
@@ -26,6 +23,13 @@ class Anonymous extends User
             'commentCount' => 0,
             'isEmailConfirmed' => true,
             'email' => 'mail@anonymous.com'
-        ];
+        ]);
+    }
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->setAttribute('id', 0);
+        $this->setRelation('groups', []);
     }
 }
