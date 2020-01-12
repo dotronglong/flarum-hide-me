@@ -11,9 +11,25 @@ use Flarum\Api\Serializer\UserSerializer;
 use Flarum\Event\GetApiRelationship;
 use Illuminate\Contracts\Events\Dispatcher;
 use Long\HideMe\User\Anonymous;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class AddForumUserRelationship
 {
+    /**
+     * @var TranslatorInterface
+     */
+    private $translator;
+
+    /**
+     * AddForumUserRelationship constructor.
+     * @param $translator
+     */
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
+
+
     public function subscribe(Dispatcher $events)
     {
         $events->listen(GetApiRelationship::class, [$this, 'getApiRelationship']);
@@ -31,7 +47,7 @@ class AddForumUserRelationship
     public function loadUsersRelationship(WillSerializeData $event)
     {
         if ($event->isController(ShowForumController::class)) {
-            $event->data['users'] = [Anonymous::user()];
+            $event->data['users'] = [Anonymous::user($this->translator)];
         }
     }
 

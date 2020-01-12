@@ -11,3 +11,6 @@ dotronglong-hide-me:
             privacy_public_info: Your identity will be visible to everyone.
             privacy_anonymous_label: Anonymous Mode
             privacy_anonymous_info: Show as anonymous. You can still edit post.
+    anonymous:
+        username: "[hidden]"
+        display_name: "[hidden]"
